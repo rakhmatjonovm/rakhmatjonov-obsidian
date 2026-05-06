@@ -1,17 +1,30 @@
-# Quartz v4
+# Rakhmatjonov.uz — Персональный сайт и портфолио
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Добро пожаловать в исходный код моего личного сайта. Этот проект объединяет цифровое портфолио и базу знаний в единую экосистему, управляемую локально.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+## О проекте
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+Как IT-специалисту и архитектору автоматизации, мне важно иметь максимально бесшовный и контролируемый процесс публикации материалов. 
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+Главная цель этого репозитория — реализовать сайт-портфолио на базе **Obsidian**. Использование этой связки позволяет мне работать с текстом, проектной документацией и статьями в привычной локальной среде (Markdown), сохраняя полный контроль над своими данными.
 
-## Sponsors
+**Мой рабочий процесс (Zero-friction capture & publish):**
+1. Создание или обновление контента локально в Obsidian.
+2. Коммит и Push изменений в Git-репозиторий.
+3. Автоматическая сборка и публикация на сервере.
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+Никаких сложных админок — только текст, Git и автоматизация.
+
+## Стек технологий
+
+Проект построен на легковесном и современном стеке:
+
+*   **Obsidian** — основная среда для управления знаниями и написания контента.
+*   **Quartz 4** — генератор статических сайтов (SSG), оптимизированный для работы с графами связей и Markdown.
+*   **Node.js** — среда выполнения для локальной разработки и сборки Quartz.
+*   **Git** — система контроля версий.
+*   **Vercel** — облачная платформа для автоматического деплоя (CI/CD) при обновлении репозитория.
+*   **Custom Domain** — привязка к домену `rakhmatjonov.uz`.
+
+---
+*Сгенерировано с помощью Quartz 4*
