@@ -1,6 +1,12 @@
 ---
-title: Welcome to Quartz
+title: Mirjalol M. Rakhmatjonov
 ---
+Всем привет! Это мой сайт портфолио!
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Здесь вы можете ознакомиться моими услугами и статьи интересные которые я пишу тут)
+
+
+Здесь вы можете ознакомиться:
+- [[Мои мысли]]
+- [[Мои проекты]]
+- [[Мои услуги]]
