@@ -1,3 +1,29 @@
 @use "./base.scss";
 
 // put your custom CSS here!
+.lang-switcher {
+  display: flex;
+  gap: 0.4rem;
+
+  .lang-btn {
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--darkgray);
+    text-decoration: none;
+    border: 1px solid var(--lightgray);
+    transition: all 0.2s;
+
+    &:hover {
+      background: var(--highlight);
+      color: var(--secondary);
+    }
+
+    &.active {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+  }
+}
