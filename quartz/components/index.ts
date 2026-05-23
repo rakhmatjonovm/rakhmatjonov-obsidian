@@ -23,6 +23,10 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import PortfolioHead from "./PortfolioHead"
+import PortfolioHeader from "./PortfolioHeader"
+import PortfolioFooter from "./PortfolioFooter"
+import InnerPageBanner from "./InnerPageBanner"
 
 export {
   ArticleTitle,
@@ -50,4 +54,8 @@ export {
   Comments,
   Flex,
   ConditionalRender,
+  PortfolioHead,
+  PortfolioHeader,
+  PortfolioFooter,
+  InnerPageBanner,
 }

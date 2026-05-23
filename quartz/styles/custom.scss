@@ -1,29 +1,218 @@
 @use "./base.scss";
 
-// put your custom CSS here!
-.lang-switcher {
-  display: flex;
-  gap: 0.4rem;
+// ============================================================
+// PORTFOLIO LAYOUT OVERRIDES
+// Quartz HTML structure for content pages:
+//   #quartz-root
+//     #quartz-body
+//       .left.sidebar  (empty - we hide it)
+//       .center
+//         .page-header
+//           header   ← PortfolioHeader renders here
+//           div.popover-hint ← InnerPageBanner renders here
+//         article    ← markdown content
+//         .page-footer
+//       .right.sidebar (empty - we hide it)
+//     footer         ← PortfolioFooter renders here
+// ============================================================
 
-  .lang-btn {
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--darkgray);
-    text-decoration: none;
-    border: 1px solid var(--lightgray);
-    transition: all 0.2s;
+// Page background matches front-portfolio dark theme
+body {
+  background-color: #151327 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+// Root wrapper — remove all Quartz layout constraints
+#quartz-root {
+  display: block !important;
+  max-width: unset !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: unset !important;
+}
+
+// Quartz body — full width, disable grid
+#quartz-body {
+  display: block !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+// Hide sidebars (they're empty but take up space in default CSS)
+.sidebar.left,
+.sidebar.right {
+  display: none !important;
+}
+
+// Center column — full width, no constraints
+.center {
+  display: block !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  flex: unset !important;
+  grid-column: unset !important;
+}
+
+// page-header div — reset all Quartz styling
+.page-header {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  max-width: 100% !important;
+}
+
+// The <header> tag wrapping PortfolioHeader — reset Quartz's header styles
+.page-header > header {
+  all: unset;
+  display: block;
+}
+
+// The div.popover-hint wrapping InnerPageBanner — reset
+.page-header > div {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+// Footer wrapper — reset Quartz styles
+#quartz-root > footer {
+  all: unset;
+  display: block;
+}
+
+// Inner page banner — force full viewport width, breaking out of any container
+section.banner__inner-page {
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  right: 50% !important;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+}
+
+// Article content: constrained width, centered, styled for dark theme
+article.popover-hint {
+  max-width: 900px !important;
+  margin: 60px auto !important;
+  padding: 0 24px 80px !important;
+  background: transparent !important;
+  border: none !important;
+
+  // Restore readable typography within article
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff !important;
+    font-family: 'Kumbh Sans', sans-serif !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  p {
+    color: #c8c8d0 !important;
+    line-height: 1.8 !important;
+    margin-bottom: 1.2rem !important;
+    font-family: 'Kumbh Sans', sans-serif !important;
+    font-size: 1rem !important;
+  }
+
+  a {
+    color: #3C72FC !important;
+    text-decoration: none !important;
 
     &:hover {
-      background: var(--highlight);
-      color: var(--secondary);
-    }
-
-    &.active {
-      background: var(--secondary);
-      color: white;
-      border-color: var(--secondary);
+      color: #fff !important;
     }
   }
+
+  ul, ol {
+    color: #c8c8d0 !important;
+    padding-left: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  li {
+    margin-bottom: 0.4rem !important;
+    line-height: 1.7 !important;
+  }
+
+  blockquote {
+    border-left: 4px solid #3C72FC !important;
+    padding: 0.5rem 1rem !important;
+    margin: 1.5rem 0 !important;
+    color: #8888a0 !important;
+    background: rgba(60, 114, 252, 0.06) !important;
+    border-radius: 0 6px 6px 0 !important;
+  }
+
+  pre {
+    background: #0f0d1d !important;
+    border-radius: 8px !important;
+    padding: 1.2rem 1.5rem !important;
+    overflow-x: auto !important;
+    margin-bottom: 1.5rem !important;
+    border: 1px solid #2a2640 !important;
+  }
+
+  code {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.88em !important;
+    color: #e8e8f0 !important;
+    background: rgba(60, 114, 252, 0.1) !important;
+    padding: 0.15em 0.4em !important;
+    border-radius: 4px !important;
+  }
+
+  pre code {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  img {
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    margin: 1.5rem 0 !important;
+    height: auto !important;
+  }
+
+  hr {
+    border: none !important;
+    border-top: 1px solid #2a2640 !important;
+    margin: 2rem 0 !important;
+  }
+
+  // Anchor link icons in headings
+  a[role="anchor"] {
+    color: #3a3f6d !important;
+    margin-left: 0.4rem !important;
+  }
+}
+
+// The <hr> between article and page-footer
+#quartz-body > .center > hr {
+  display: none !important;
+}
+
+// page-footer div — hide it
+.page-footer {
+  display: none !important;
+}
+
+// Hide Quartz UI elements we don't use
+.search-container,
+.graph-outer,
+.backlinks,
+.toc,
+.darkmode,
+.reader-mode,
+.page-title,
+.breadcrumbs,
+.article-title,
+.content-meta,
+.tags {
+  display: none !important;
 }

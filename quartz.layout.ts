@@ -1,70 +1,28 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import LanguageSwitcher from "./quartz/components/LanguageSwitcher"
 
-// components shared across all pages
+// Components shared across all Quartz-generated pages
 export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
-  header: [LanguageSwitcher()],
+  head: Component.PortfolioHead(),
+  header: [Component.PortfolioHeader()],
   afterBody: [],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/rakhmatjonovm",
-      "Telegram": "https://t.me/rakhmatjonovm",
-      "Instagram": "https://www.instagram.com/rakhmatjonovmm/"
-    },
-  }),
+  footer: Component.PortfolioFooter(),
 }
 
-// components for pages that display a single page (e.g. a single note)
+// Layout for individual content pages (blog posts, portfolio projects)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
-      condition: (page) => page.fileData.slug !== "index",
-    }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    Component.InnerPageBanner(),
   ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
-      ],
-    }),
-    Component.Explorer(),
-  ],
-  right: [
-    Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
-  ],
+  left: [],
+  right: [],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// Layout for listing pages (folder/tag indexes) - also minimal
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Flex({
-      components: [
-        {
-          Component: Component.Search(),
-          grow: true,
-        },
-        { Component: Component.Darkmode() },
-      ],
-    }),
-    Component.Explorer(),
+  beforeBody: [
+    Component.InnerPageBanner(),
   ],
+  left: [],
   right: [],
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rakhmatjonov — Выберите язык / Choose Language</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0d1117;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+        }
+        .logo {
+            width: 180px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        p {
+            color: #aaa;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .lang-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            background: #3C72FC;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+            letter-spacing: 0.05em;
+        }
+        .lang-btn:hover {
+            background: #2558d4;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+        .lang-btn .flag {
+            font-size: 1.6rem;
+        }
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #3C72FC;
+            margin: 0 auto 30px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/images/logo/logo.png" alt="Rakhmatjonov" class="logo"
+             onerror="this.style.display='none'">
+        <h1>Rakhmatjonov</h1>
+        <div class="divider"></div>
+        <p>Выберите язык / Choose Language</p>
+        <div class="lang-buttons">
+            <a href="/ru/index.html" class="lang-btn">
+                <span class="flag">🇷🇺</span>
+                Русский (RU)
+            </a>
+            <a href="/en/index.html" class="lang-btn">
+                <span class="flag">🇬🇧</span>
+                English (EN)
+            </a>
+        </div>
+    </div>
+</body>
+</html>

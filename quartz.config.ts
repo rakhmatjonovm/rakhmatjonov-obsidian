@@ -5,8 +5,8 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "Rakhmatjanov",
     pageTitleSuffix: "",
-    enableSPA: true,
-    enablePopovers: true,
+    enableSPA: false,
+    enablePopovers: false,
     analytics: null,
     locale: "ru-RU",
     baseUrl: "rakhmatjanov.uz",
@@ -71,6 +71,7 @@ const config: QuartzConfig = {
       Plugin.ContentIndex({ enableSiteMap: true, enableRSS: true }),
       Plugin.Assets(),
       Plugin.Static(),
+      Plugin.PortfolioStatic(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
     ],
