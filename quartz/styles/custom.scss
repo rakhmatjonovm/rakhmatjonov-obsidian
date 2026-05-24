@@ -95,6 +95,25 @@ section.banner__inner-page {
   margin-right: -50vw !important;
 }
 
+// Portfolio cover hero (from frontmatter cover field)
+.portfolio-cover {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 50px;
+
+  img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+}
+
 // Article content: constrained width, centered, styled for dark theme
 article.popover-hint {
   max-width: 900px !important;

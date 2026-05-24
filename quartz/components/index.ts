@@ -27,6 +27,7 @@ import PortfolioHead from "./PortfolioHead"
 import PortfolioHeader from "./PortfolioHeader"
 import PortfolioFooter from "./PortfolioFooter"
 import InnerPageBanner from "./InnerPageBanner"
+import PortfolioCover from "./PortfolioCover"
 
 export {
   ArticleTitle,
@@ -58,4 +59,5 @@ export {
   PortfolioHeader,
   PortfolioFooter,
   InnerPageBanner,
+  PortfolioCover,
 }

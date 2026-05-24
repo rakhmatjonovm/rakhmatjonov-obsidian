@@ -13,6 +13,7 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.InnerPageBanner(),
+    Component.PortfolioCover(),
   ],
   left: [],
   right: [],
